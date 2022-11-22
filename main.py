@@ -10,3 +10,4 @@
 # Date:         6 December 2022
 
 print('something funny')
+print(1+1) 
