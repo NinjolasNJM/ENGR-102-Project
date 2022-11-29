@@ -9,9 +9,24 @@
 # Assignment:   Project
 # Date:         6 December 2022
 
-print('something funny')
-print(1+1)
+from turtle import *
 
-print("I am Chris ")
+class Instr:
+    def __init__(self, kind, value):
+        self.direction = 0
+        self.distance = 0
 
-print('324')
+        if kind == 'turn':
+            self.direction = value
+        elif kind == 'move':
+            self.distance = value
+
+# If instruction is a direction:
+    # direction = direction types[next element of the list]
+# else:
+    # distance = prevfious element of the list * size of unit[kind]
+
+
+# somethnig like that
+
+
