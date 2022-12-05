@@ -11,10 +11,14 @@
 
 from turtle import *
 
-class Car:
+class Drive:
     '''vegbtefb'''
-    def __init__(self, windowHeight=500, windowWidth=600, speed=2):
+    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white"):
         self.speed = speed
+        self.shape = shape
+        self.windowHeight = windowHeight
+        self.windowWidth = windowWidth
+        self.bColor = bColor
 
     def turn(self, d):
         direction = d.lower()
@@ -65,6 +69,9 @@ class Car:
         self.move(move, unit)
 
     def run(self, steps):
+        screensize(self.windowWidth, self.windowHeight, self.bColor)
+
+
         speed(self.speed)
         for s in steps:
             self.takeStep(s)

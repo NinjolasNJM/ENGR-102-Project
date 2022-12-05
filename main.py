@@ -10,7 +10,7 @@
 # Date:         6 December 2022
 
 from file_reader import Instructions
-from turtle_graphic import Car
+from turtle_graphic import Drive
 
 
 # run code:
@@ -24,8 +24,8 @@ steps2 = Instructions(file2)
 steps3 = Instructions(file3)
 
 print(steps2.makeInstructions())
-car = Car(1)
-car.run(steps2.makeInstructions())
+drive = Drive(1)
+drive.run(steps2.makeInstructions())
 
 
 
