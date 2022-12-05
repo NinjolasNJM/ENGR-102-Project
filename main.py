@@ -19,17 +19,19 @@ file1 = 'Kyle2VetPk.txt'
 file2 = 'Easterwood2Coulter.txt'
 file3 = 'Zach2StJo.txt'
 
-steps1 = Instructions(file1)
-steps2 = Instructions(file2)
-steps3 = Instructions(file3)
-
-print(steps2.makeInstructions())
-drive = Drive(1)
-drive.run(steps2.makeInstructions())
 
 
+def codeToRun(fileName):
+    steps = Instructions(fileName)
+
+    print(steps.makeInstructions())
+    drive = Drive(1)
+    drive.run(steps.makeInstructions())
 
 
+codeToRun(file1)
+codeToRun(file2)
+codeToRun(file3)
 
 
 
