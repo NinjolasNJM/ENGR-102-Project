@@ -10,6 +10,8 @@
 # Date:         6 December 2022
 
 from file_reader import Instructions
+from turtle_graphic import Car
+
 
 # run code:
 # get steps as a list of each word in each step that is separated by a blank line.
@@ -17,11 +19,14 @@ file1 = 'Kyle2VetPk.txt'
 file2 = 'Easterwood2Coulter.txt'
 file3 = 'Zach2StJo.txt'
 
-steps = Instructions(file2)
+steps1 = Instructions(file1)
+steps2 = Instructions(file2)
+steps3 = Instructions(file3)
 
+print(steps2.makeInstructions())
+car = Car(1)
+car.run(steps2.makeInstructions())
 
-
-print(steps.makeInstructions())
 
 
 

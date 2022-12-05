@@ -11,98 +11,13 @@
 
 from turtle import *
 
-def turn(direction):
-    if direction == 'north':
-        setheading(90)#Sets direction to north when using a objective direction
-        left(0)
-    elif direction == 'east':
-        setheading(90)
-        right(90)
-    elif direction == 'south':
-        setheading(90)
-        right(180)
-    elif direction == 'west':
-        setheading(90)
-        left(90)
-    elif direction == 'northeast':
-        setheading(90)
-        right(45)
-    elif direction == 'southeast':
-        setheading(90)
-        right(135)
-    elif direction == 'northwest':
-        setheading(90)
-        left(45)
-    elif direction == 'southwest':
-        setheading(90)
-        left(135)
-    elif direction == 'left':
-
-        left(90)
-    elif direction == 'right':
-
-        right(90)
-    elif direction == 'onto':
-
-        left(0)
-    else:
-        left(0)
-
-"""
-setup(500, 550)
-title('Kyle Field to Veterans Park')
-speed(1)
-setheading(90)
-
-
-
-turn('southeast')
-forward(20)
-turn('left')
-forward(110)
-turn('left')
-forward(30)
-turn('right')
-forward(140)
-turn('left')
-forward(20)
-turn('right')
-forward(80)
-turn('right')
-forward(40)
-
-exitonclick()
-
-"""
-
-#Make function for turning
-
-#Turtle Shape
-speed(1)
-penup()
-left(180)
-forward(200)
-left(180)
-pendown()
-forward(50)
-right(90)
-circle(50, 180)
-right(90)
-forward(100)
-right(90)
-circle(50, 180)
-
-
-
-exitonclick()
-
-
 class Car:
-
+    '''vegbtefb'''
     def __init__(self, windowHeight=500, windowWidth=600, speed=2):
-        speed(speed)
+        self.speed = speed
 
-    def turn(direction):
+    def turn(self, d):
+        direction = d.lower()
         if direction == 'north':
             setheading(90)  # Sets direction to north when using a objective direction
             left(0)
@@ -138,3 +53,21 @@ class Car:
             left(0)
         else:
             left(0)
+
+    def move(self, move, unit):
+        dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
+        forward(dist)
+
+    def takeStep(self, step):
+        (dir, move, unit) = step
+
+        self.turn(dir)
+        self.move(move, unit)
+
+    def run(self, steps):
+        speed(self.speed)
+        for s in steps:
+            self.takeStep(s)
+
+        exitonclick()
+

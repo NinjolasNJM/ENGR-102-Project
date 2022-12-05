@@ -28,8 +28,8 @@ class Instructions:
         Looks for keysords like "turn" and "ft" for determining where the direction and
         move distance, respectively, are defined, and returns the direction,
         distance and the distance's unit.'''
-        dir = None
-        move = None
+        dir = 'Continue'
+        move = 0
         unit = None
         dirKinds = ['turn', 'head', 'continue', 'slight']
         moveKinds = ['mi', 'ft']
