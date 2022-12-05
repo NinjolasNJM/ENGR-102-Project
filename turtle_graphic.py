@@ -20,6 +20,12 @@ class Drive:
         self.windowWidth = windowWidth
         self.bColor = bColor
 
+    """
+    chris.26@tamu.edu
+    
+    Defines a function called 'turn' that takes a string as a parameter, the string being a direction. 
+    Function uses an 'if-else' command to turn the turtle icon to the desired direction stated by the parameter.
+    """
     def turn(self, d):
         direction = d.lower()
         if direction == 'north':
@@ -58,16 +64,36 @@ class Drive:
         else:
             left(0)
 
+    """
+    chris.26@tamu.edu
+    
+    Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula 
+    to calculate the distance required to move.
+    """
     def move(self, move, unit):
         dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
         forward(dist)
 
+    """
+    chris.26@tamu.edu
+    
+    Defines a function called 'takeStep' that takes 'step' as a parameter which is used to hold three parameters: 
+    direction, move, and unit. These control the movements of the turtle graphic via run function explained below.
+    """
     def takeStep(self, step):
         (dir, move, unit) = step
 
         self.turn(dir)
         self.move(move, unit)
 
+    """
+    chris.26@tamu.edu
+    
+    Defines a function called 'run' in the 'Drive' class that takes parameter 'steps'. Uses a 'for-loop' to loop through
+    'steps' to run into the turtle graphic. Uses command 'exitonclick' so that the turtle graphic does not disappear 
+    after completely executing, and will disappear once the user clicks the screen. Also uses parameters stated earlier 
+    in the class to set the screensize of the turtle window.
+    """
     def run(self, steps):
         screensize(self.windowWidth, self.windowHeight, self.bColor)
 
