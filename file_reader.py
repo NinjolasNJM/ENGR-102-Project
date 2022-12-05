@@ -56,17 +56,18 @@ class instructions2:
 
     def __init__(self,filename):
         file = open(filename)
-        self.filestringlist = list(file)
+        self.list1 = list(file)
 
     def getsimple(self,s, num, unit):
         liststring = s.split()
         direction = 'Continue'
+        changedirection = ['turn', 'slight', 'head']
         for t in range(len(liststring)):
             if liststring[t].lower() in changedirection:
                 direction = liststring[t + 1]
         return direction + ' ' + num + ' ' + unit + '\n'
 
-    def getreal(self,file_as_string):
+    def getreal(self):
         simpledirections = ''
 
         changedirection = ['turn', 'slight', 'head']
