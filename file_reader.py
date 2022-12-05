@@ -51,42 +51,46 @@ class Instructions:
 
 
 # EV
-def getsimple(s, num, unit):
-    liststring = s.split()
-    direction = 'Continue'
-    for t in range(len(liststring)):
-        if liststring[t].lower() in changedirection:
-            direction = liststring[t + 1]
-    return direction + ' ' + num + ' ' + unit + '\n'
 
+class instructions2:
 
-simpledirections = ''
+    def __init__(self,filename):
+        file = open(filename)
+        self.filestringlist = list(file)
+    def getsimple(self,s, num, unit):
+        liststring = s.split()
+        direction = 'Continue'
+        for t in range(len(liststring)):
+            if liststring[t].lower() in changedirection:
+                direction = liststring[t + 1]
+        return direction + ' ' + num + ' ' + unit + '\n'
 
-changedirection = ['turn', 'slight', 'head']
-units = ['mi', 's', 'ft', 'min']
-time = ['s', 'min']
+    def getreal(self,file_as_string):
+        simpledirections = ''
 
-file = open('Easterwood2Coulter.txt')
-list1 = list(file)
+        changedirection = ['turn', 'slight', 'head']
+        units = ['mi', 's', 'ft', 'min']
+        time = ['s', 'min']
 
-for i in range(len(list1)):
-    test = list1[i].split()
+        for i in range(len(list1)):
+            test = list1[i].split()
 
-    if len(test) > 1:
-        maybenum = test[0]
-        maybenum = maybenum.replace('.', '')
-        s = ''
-        x = i - 1
-        if maybenum.isnumeric() and test[1] in units:
-            while list1[x] != '\n' and x != -1:
-                s = list1[x] + s
-                x -= 1
+            if len(test) > 1:
+                maybenum = test[0]
+                maybenum = maybenum.replace('.', '')
+                s = ''
+                x = i - 1
+                if maybenum.isnumeric() and test[1] in units:
+                    while list1[x] != '\n' and x != -1:
+                        s = list1[x] + s
+                        x -= 1
 
-            dist = test[0]
-            unit = test[1]
-            if unit in time:
-                dist = test[2].replace('(', '')
-                unit = test[3].replace(')', '')
+                    dist = test[0]
+                    unit = test[1]
+                    if unit in time:
+                        dist = test[2].replace('(', '')
+                        unit = test[3].replace(')', '')
 
-            simpledirections += getsimple(s, dist, unit)
+                    simpledirections += getsimple(s, dist, unit)
+        return simpledirections
 file.close()
