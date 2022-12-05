@@ -48,3 +48,45 @@ class Instructions:
         Makes a list with each instruction in it'''
         instr = [self.makeStep(f) for f in self.file]
         return instr
+
+
+# EV
+def getsimple(s, num, unit):
+    liststring = s.split()
+    direction = 'Continue'
+    for t in range(len(liststring)):
+        if liststring[t].lower() in changedirection:
+            direction = liststring[t + 1]
+    return direction + ' ' + num + ' ' + unit + '\n'
+
+
+simpledirections = ''
+
+changedirection = ['turn', 'slight', 'head']
+units = ['mi', 's', 'ft', 'min']
+time = ['s', 'min']
+
+file = open('Easterwood2Coulter.txt')
+list1 = list(file)
+
+for i in range(len(list1)):
+    test = list1[i].split()
+
+    if len(test) > 1:
+        maybenum = test[0]
+        maybenum = maybenum.replace('.', '')
+        s = ''
+        x = i - 1
+        if maybenum.isnumeric() and test[1] in units:
+            while list1[x] != '\n' and x != -1:
+                s = list1[x] + s
+                x -= 1
+
+            dist = test[0]
+            unit = test[1]
+            if unit in time:
+                dist = test[2].replace('(', '')
+                unit = test[3].replace(')', '')
+
+            simpledirections += getsimple(s, dist, unit)
+file.close()
