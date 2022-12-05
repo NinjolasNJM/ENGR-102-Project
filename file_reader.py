@@ -57,6 +57,7 @@ class instructions2:
     def __init__(self,filename):
         file = open(filename)
         self.filestringlist = list(file)
+
     def getsimple(self,s, num, unit):
         liststring = s.split()
         direction = 'Continue'
@@ -93,4 +94,3 @@ class instructions2:
 
                     simpledirections += getsimple(s, dist, unit)
         return simpledirections
-file.close()
