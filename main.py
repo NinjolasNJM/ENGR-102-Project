@@ -9,24 +9,24 @@
 # Assignment:   Project
 # Date:         6 December 2022
 
-from turtle import *
+from file_reader import Instructions
 
-class Instr:
-    def __init__(self, kind, value):
-        self.direction = 0
-        self.distance = 0
+# run code:
+# get steps as a list of each word in each step that is separated by a blank line.
+file1 = 'Kyle2VetPk.txt'
+file2 = 'Easterwood2Coulter.txt'
+file3 = 'Zach2StJo.txt'
 
-        if kind == 'turn':
-            self.direction = value
-        elif kind == 'move':
-            self.distance = value
-
-# If instruction is a direction:
-    # direction = direction types[next element of the list]
-# else:
-    # distance = prevfious element of the list * size of unit[kind]
+steps = Instructions(file2)
 
 
-# somethnig like that
+
+print(steps.makeInstructions())
+
+
+
+
+
+
 
 
