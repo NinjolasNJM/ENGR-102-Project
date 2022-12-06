@@ -25,18 +25,18 @@ class GUI:
 
         self.window.title('Map Your File!')
 
-        self.label= tk.Label(self.window, text='Input file name and press Input', font=('Arial',14))
+        self.label= tk.Label(self.window, text='Input file name and press Input', font=('Times New Roman',14))
         self.label.pack(padx=10,pady=10)
 
         self.textbox=tk.Text(self.window, height=1)
         self.textbox.pack()
 
-        self.button=tk.Button(self.window, text='Input', command=self.assign_message)
+        self.button=tk.Button(self.window, text='Input', height=2, width=5, command=self.assign_message, font=('Times New Roman',10))
         self.button.pack(padx=10,pady=10)
 
         self.l2 = tk.Label()
         self.l2.pack(pady=5)
-        self.speed_label=tk.Label(self.window, text='Speed of car: ', font=('Arial',14))
+        self.speed_label=tk.Label(self.window, text='Speed of car: ', font=('Times New Roman',14))
         self.speed_label.pack(pady=10)
         self.buttonframe = tk.Frame(self.window)
         self.buttonframe.columnconfigure(0, weight=1)
@@ -58,7 +58,7 @@ class GUI:
 
         self.l1 = tk.Label()
         self.l1.pack(pady=10)
-        self.gobtn=tk.Button(text='Go',height=3,width=16,bg='white', command=self.go)
+        self.gobtn=tk.Button(text='Go',height=3,width=16,bg='white', command=self.go, font=('Times New Roman',10))
         self.gobtn.pack(pady=10)
         self.window.mainloop()
 
@@ -74,11 +74,11 @@ class GUI:
         This function changes the color of the slow button when pressed and assigns the speed variable to slow
         """
         self.speed=1
-        self.btnslow = tk.Button(self.buttonframe, text='Slow',bg='green', command=self.assign_speed_slow)
+        self.btnslow = tk.Button(self.buttonframe, text='Slow',bg='green', command=self.assign_speed_slow, font=('Times New Roman',10))
         self.btnslow.grid(row=0, column=0, sticky='ew')
-        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='white', command=self.assign_speed_med)
+        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='white', command=self.assign_speed_med, font=('Times New Roman',10))
         self.btnmed.grid(row=0, column=1, sticky='ew')
-        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='white', command=self.assign_speed_fast)
+        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='white', command=self.assign_speed_fast, font=('Times New Roman',10))
         self.btnfast.grid(row=0, column=2, sticky='ew')
 
     def assign_speed_med(self):
@@ -86,11 +86,11 @@ class GUI:
         This function changes the color of the med button when pressed and assigns the speed variable to med
          """
         self.speed=2
-        self.btnslow = tk.Button(self.buttonframe, text='Slow', bg='white', command=self.assign_speed_slow)
+        self.btnslow = tk.Button(self.buttonframe, text='Slow', bg='white', command=self.assign_speed_slow, font=('Times New Roman',10))
         self.btnslow.grid(row=0, column=0, sticky='ew')
-        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='green', command=self.assign_speed_med)
+        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='green', command=self.assign_speed_med, font=('Times New Roman',10))
         self.btnmed.grid(row=0, column=1, sticky='ew')
-        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='white', command=self.assign_speed_fast)
+        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='white', command=self.assign_speed_fast, font=('Times New Roman',10))
         self.btnfast.grid(row=0, column=2, sticky='ew')
 
     def assign_speed_fast(self):
@@ -98,11 +98,11 @@ class GUI:
         This function changes the color of the fast button when pressed and assigns the speed variable to fast
         """
         self.speed=3
-        self.btnslow = tk.Button(self.buttonframe, text='Slow', bg='white', command=self.assign_speed_slow)
+        self.btnslow = tk.Button(self.buttonframe, text='Slow', bg='white', command=self.assign_speed_slow, font=('Times New Roman',10))
         self.btnslow.grid(row=0, column=0, sticky='ew')
-        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='white', command=self.assign_speed_med)
+        self.btnmed = tk.Button(self.buttonframe, text='Medium', bg='white', command=self.assign_speed_med, font=('Times New Roman',10))
         self.btnmed.grid(row=0, column=1, sticky='ew')
-        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='green', command=self.assign_speed_fast)
+        self.btnfast = tk.Button(self.buttonframe, text='Fast', bg='green', command=self.assign_speed_fast, font=('Times New Roman',10))
         self.btnfast.grid(row=0, column=2, sticky='ew')
 
     def go(self):
