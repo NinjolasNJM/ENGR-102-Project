@@ -105,13 +105,3 @@ class Drive:
 
         exitonclick()
 
-    """
-    chris.26@tamu.edu
-    
-    Sets a background to the turtle graphic 
-    window using a PNG file or GIF file
-    """
-    def winBackground(self):
-        window = Screen()
-        window.bgpic(f'{bgFile}')  # image should be PNG or GIF
-        window.update()  # to show the image
