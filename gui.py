@@ -11,6 +11,9 @@ class GUI:
         self.window = tk.Tk('500x600')
         self.file = ''
         self.speed = 1
+        self.check=0
+
+        self.window.title('Map Your File!')
 
         self.label= tk.Label(self.window, text='Input file name and press Input', font=('Arial',14))
         self.label.pack(padx=10,pady=10)
@@ -22,7 +25,7 @@ class GUI:
         self.button.pack(padx=10,pady=10)
 
         self.l2 = tk.Label()
-        self.l2.pack(pady=10)
+        self.l2.pack(pady=5)
         self.speed_label=tk.Label(self.window, text='Speed of car: ', font=('Arial',14))
         self.speed_label.pack(pady=10)
         self.buttonframe = tk.Frame(self.window)
@@ -96,4 +99,13 @@ class GUI:
         """elivalentino@tamu.edu
         This function commands the go button to close the gui
         """
-        self.window.destroy()
+        self.check=0
+        try:
+            file=open(self.file.split()[0]).read()
+        except:
+            print('File not found')
+            self.check=1
+
+        if self.check==0:
+
+            self.window.destroy()

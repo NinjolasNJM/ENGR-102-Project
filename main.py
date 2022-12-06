@@ -27,7 +27,7 @@ s=gui.speed
 
 def codeToRun(fileName,s):
     steps = Instructions(fileName)
-    print(steps.makeInstructions())
+    print(steps)
     drive = Drive(500,600,s)
     drive.run(steps.makeInstructions())
 
