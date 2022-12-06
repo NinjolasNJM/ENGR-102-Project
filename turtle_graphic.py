@@ -12,7 +12,7 @@
 from turtle import *
 
 class Drive:
-    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
+    def __init__(self, title, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
         """
         chris.26@tamu.edu
 
@@ -20,6 +20,7 @@ class Drive:
         within this class, and sets parameters with values, such as the window width and height of the turtle
         graphic screen.
         """
+        self.title = title
         self.speed = speed
         self.shape = shape
         self.windowHeight = windowHeight
