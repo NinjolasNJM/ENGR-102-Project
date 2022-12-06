@@ -11,8 +11,6 @@ class GUI:
         self.window = tk.Tk('500x600')
         self.file = ''
         self.speed = 1
-        self.another_file=False
-
 
         self.label= tk.Label(self.window, text='Input file name and press Input', font=('Arial',14))
         self.label.pack(padx=10,pady=10)
