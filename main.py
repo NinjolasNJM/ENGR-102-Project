@@ -22,17 +22,19 @@ file3 = 'Zach2StJo.txt'
 gui=GUI()
 file_name=gui.file
 file_name=file_name.split('\n')[0]
-s=gui.speed
+s = gui.speed
 
 
 def codeToRun(fileName,s):
     steps = Instructions(fileName)
     print(steps)
-    drive = Drive(500,600,s)
+    drive = Drive(fileName, 500,600,s)
     drive.run(steps.makeInstructions())
 
 
 codeToRun(file_name,s)
+
+
 
 
 

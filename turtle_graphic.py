@@ -79,7 +79,7 @@ class Drive:
             Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula
             to calculate the distance required to move.
             """
-        dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
+        dist = float(move) * 50 / 5280 if unit == 'ft' else float(move) * 50
         forward(dist)
 
 
@@ -108,9 +108,11 @@ class Drive:
             """
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
+        title(self.title)
         bgpic('colors.png')  # image should be PNG or GIF
         update()  # to show the image
         speed(self.speed)
+        color('#555555', '#a71810')
         for s in steps:
             self.takeStep(s)
 

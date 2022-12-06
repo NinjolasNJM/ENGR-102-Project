@@ -1,3 +1,13 @@
+# By submitting this assignment, I agree to the following:
+#   "Aggies do not lie, cheat, or steal, or tolerate those who do."
+#   "I have not given or received any unauthorized aid on this assignment."
+#
+# Names:        Nicholas Mirabal
+#               Eli Valentino
+#               Chris Avila
+# Section:      102-565
+# Assignment:   Project
+# Date:         6 December 2022
 import tkinter as tk
 from tkinter import messagebox
 
@@ -97,7 +107,7 @@ class GUI:
 
     def go(self):
         """elivalentino@tamu.edu
-        This function commands the go button to close the gui
+        This function commands the go button to close the gui but only if the file can be found
         """
         self.check=0
         try:
