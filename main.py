@@ -13,24 +13,20 @@ from file_reader import Instructions
 from turtle_graphic import Drive
 from gui import GUI
 
-# run code:
-# get steps as a list of each word in each step that is separated by a blank line.
-file1 = 'Kyle2VetPk.txt'
-file2 = 'Easterwood2Coulter.txt'
-file3 = 'Zach2StJo.txt'
-
 def getVars():
-    ''' @NinjolasNJM2003@tamu.edu
+    ''' @elivalentino@tamu.edu
 
     Creates the GUI and uses it to create the instructions
-    and speed variables.'''
+    and speed variables.
+
+    '''
     gui=GUI()
     file_name=gui.file
     file_name=file_name.split('\n')[0]
     s = gui.speed
     return file_name, s
 
-#d
+
 def codeToRun(fileName,s):
     '''@NinjolasNJM2003@tamu.edu
 
