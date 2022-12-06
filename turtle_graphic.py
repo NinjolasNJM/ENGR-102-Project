@@ -21,7 +21,7 @@ class Drive:
         graphic screen.
 
         Tests included different possible variables that should remain immutable while
-        pinpointing which variables should be mutable.
+        pinpointing which variables should be mutable
         """
         self.title = title
         self.speed = speed
