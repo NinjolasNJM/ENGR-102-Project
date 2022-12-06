@@ -110,10 +110,10 @@ class Drive:
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
         title(self.title)
-        bgpic('colors.png')  # image should be PNG or GIF
+        bgpic('space.png')  # image should be PNG or GIF
         update()  # to show the image
         speed(self.speed)
-        color('#555555', '#a71810')
+        color('#ffff00', '#ffffff')
         for s in steps:
             self.takeStep(s)
 
