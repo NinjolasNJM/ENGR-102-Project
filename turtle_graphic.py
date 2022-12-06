@@ -128,6 +128,7 @@ class Drive:
             Tested different heights and widths for the window screensize to ensure that the travel
             path taken by the turtle icon would be displayed.
             """
+
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
         title(self.title)
