@@ -13,7 +13,7 @@ from turtle import *
 
 class Drive:
     '''vegbtefb'''
-    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white"):
+    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
         self.speed = speed
         self.shape = shape
         self.windowHeight = windowHeight
@@ -95,12 +95,23 @@ class Drive:
     in the class to set the screensize of the turtle window.
     """
     def run(self, steps):
-        screensize(self.windowWidth, self.windowHeight, self.bColor)
+        screensize(self.windowHeight, self.windowWidth, self.bColor)
 
-
+        bgpic('colors.png')  # image should be PNG or GIF
+        update()  # to show the image
         speed(self.speed)
         for s in steps:
             self.takeStep(s)
 
         exitonclick()
 
+    """
+    chris.26@tamu.edu
+    
+    Sets a background to the turtle graphic 
+    window using a PNG file or GIF file
+    """
+    def winBackground(self):
+        window = Screen()
+        window.bgpic(f'{bgFile}')  # image should be PNG or GIF
+        window.update()  # to show the image
