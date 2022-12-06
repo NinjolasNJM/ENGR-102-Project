@@ -19,6 +19,7 @@ file1 = 'Kyle2VetPk.txt'
 file2 = 'Easterwood2Coulter.txt'
 file3 = 'Zach2StJo.txt'
 
+#call the gui and assign entries by user through GUI to variables
 gui=GUI()
 file_name=gui.file
 file_name=file_name.split('\n')[0]
