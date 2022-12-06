@@ -93,6 +93,7 @@ class Drive:
     'steps' to run into the turtle graphic. Uses command 'exitonclick' so that the turtle graphic does not disappear 
     after completely executing, and will disappear once the user clicks the screen. Also uses parameters stated earlier 
     in the class to set the screensize of the turtle window.
+    Sets background of turtle graphic window to file stated.
     """
     def run(self, steps):
         screensize(self.windowHeight, self.windowWidth, self.bColor)
