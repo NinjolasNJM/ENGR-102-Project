@@ -80,7 +80,7 @@ class Drive:
             Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula
             to calculate the distance required to move.
             """
-        dist = float(move) * 30 / 5280 if unit == 'ft' else float(move) * 30
+        dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
         forward(dist)
 
 
