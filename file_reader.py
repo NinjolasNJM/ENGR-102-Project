@@ -33,16 +33,18 @@ class Instructions:
         dir = 'onto'
         move = 0
         unit = 'Nothings'
+        dirkind = 'continue'
         dirKinds = ['turn', 'head', 'continue', 'slight', 'keep']
         moveKinds = ['mi', 'ft']
         for i in range(len(step)):
             if str.lower(step[i]) in dirKinds:
                 dir = step[i + 1]
+                dirkind = step[i]
             if str.lower(step[i]) in moveKinds:
                 move = step[i - 1]
                 unit = step[i]
 
-        return dir, move, unit
+        return dir, move, unit, dirkind
 
     def makeInstructions(self):
         ''' NinjolasNJM2003@gmail.com
@@ -58,7 +60,7 @@ class Instructions:
         ''' NinjolasNJM2003@gmail.com
 
         Returns a String describing the step that is taken.'''
-        (dir, move, unit) = step
+        (dir, move, unit, dirkind) = step
         return('Go ' + dir + ' ' + str(move) + ' ' + unit)
 
     def __str__(self):

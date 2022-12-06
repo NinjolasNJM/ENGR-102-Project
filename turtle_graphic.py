@@ -28,7 +28,7 @@ class Drive:
         self.bColor = bColor
 
 
-    def turn(self, d):
+    def turn(self, d, dkind):
         """
             chris.26@tamu.edu
 
@@ -36,6 +36,7 @@ class Drive:
             Function uses an 'if-else' command to turn the turtle icon to the desired direction stated by the parameter.
             """
         direction = d.lower()
+        dirk=dkind.lower()
         if direction == 'north':
             setheading(90)  # Sets direction to north when using a objective direction
             left(0)
@@ -60,10 +61,16 @@ class Drive:
         elif direction == 'southwest':
             setheading(90)
             left(135)
-        elif direction == 'left':
+        elif direction == 'left' and dirk =='slight':
+
+            left(45)
+        elif direction == 'left' and dirk != 'slight':
 
             left(90)
-        elif direction == 'right':
+        elif direction =='right' and dirk == 'slight':
+
+            right(45)
+        elif direction == 'right' and dirk != 'slight':
 
             right(90)
         elif direction == 'onto':
@@ -91,9 +98,9 @@ class Drive:
             Defines a function called 'takeStep' that takes 'step' as a parameter which is used to hold three parameters:
             direction, move, and unit. These control the movements of the turtle graphic via run function explained below.
             """
-        (dir, move, unit) = step
+        (dir, move, unit, dirkind) = step
 
-        self.turn(dir)
+        self.turn(dir, dirkind)
         self.move(move, unit)
 
 
