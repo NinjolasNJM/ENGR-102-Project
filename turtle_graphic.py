@@ -19,6 +19,9 @@ class Drive:
         Sets parameters listed above with 'self' for the class 'Drive',, Holds parameters for other functions
         within this class, and sets parameters with values, such as the window width and height of the turtle
         graphic screen.
+
+        Tests included different possible variables that should remain immutable while
+        pinpointing which variables should be mutable.
         """
         self.title = title
         self.speed = speed
@@ -34,6 +37,9 @@ class Drive:
 
             Defines a function called 'turn' that takes a string as a parameter, the string being a direction.
             Function uses an 'if-else' command to turn the turtle icon to the desired direction stated by the parameter.
+
+            In order to test this function, the main method used was trial-and-error, testing what
+            variables that was read in the inputted file would properly be implemented into this function
             """
         direction = d.lower()
         dirk=dkind.lower()
@@ -86,6 +92,8 @@ class Drive:
 
             Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula
             to calculate the distance required to move.
+
+            Tested multiple float variables to ensure proper answers were produced
             """
         dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
         forward(dist)
@@ -97,6 +105,9 @@ class Drive:
 
             Defines a function called 'takeStep' that takes 'step' as a parameter which is used to hold three parameters:
             direction, move, and unit. These control the movements of the turtle graphic via run function explained below.
+
+            Tested multiple files to be read into this function and ensure no errors would be
+            prompted.
             """
         (dir, move, unit, dirkind) = step
 
@@ -113,6 +124,9 @@ class Drive:
             after completely executing, and will disappear once the user clicks the screen. Also uses parameters stated earlier
             in the class to set the screensize of the turtle window.
             Sets background of turtle graphic window to file stated.
+
+            Tested different heights and widths for the window screensize to ensure that the travel
+            path taken by the turtle icon would be displayed.
             """
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
@@ -123,5 +137,6 @@ class Drive:
         color('#ffff00', '#ffffff')
         for s in steps:
             self.takeStep(s)
+
 
         exitonclick()
