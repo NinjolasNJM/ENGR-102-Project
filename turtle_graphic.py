@@ -12,22 +12,28 @@
 from turtle import *
 
 class Drive:
-    '''vegbtefb'''
-    def __init__(self, title, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
-        self.title = title
+    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
+        """
+        chris.26@tamu.edu
+
+        Sets parameters listed above with 'self' for the class 'Drive',, Holds parameters for other functions
+        within this class, and sets parameters with values, such as the window width and height of the turtle
+        graphic screen.
+        """
         self.speed = speed
         self.shape = shape
         self.windowHeight = windowHeight
         self.windowWidth = windowWidth
         self.bColor = bColor
 
-    """
-    chris.26@tamu.edu
-    
-    Defines a function called 'turn' that takes a string as a parameter, the string being a direction. 
-    Function uses an 'if-else' command to turn the turtle icon to the desired direction stated by the parameter.
-    """
+
     def turn(self, d):
+        """
+            chris.26@tamu.edu
+
+            Defines a function called 'turn' that takes a string as a parameter, the string being a direction.
+            Function uses an 'if-else' command to turn the turtle icon to the desired direction stated by the parameter.
+            """
         direction = d.lower()
         if direction == 'north':
             setheading(90)  # Sets direction to north when using a objective direction
@@ -65,38 +71,41 @@ class Drive:
         else:
             left(0)
 
-    """
-    chris.26@tamu.edu
-    
-    Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula 
-    to calculate the distance required to move.
-    """
+
     def move(self, move, unit):
+        """
+            chris.26@tamu.edu
+
+            Defines a function called 'move' that takes 'move' and 'unit' as parameters, which are then put into a formula
+            to calculate the distance required to move.
+            """
         dist = float(move) * 50 / 5280 if unit == 'ft' else float(move) * 50
         forward(dist)
 
-    """
-    chris.26@tamu.edu
-    
-    Defines a function called 'takeStep' that takes 'step' as a parameter which is used to hold three parameters: 
-    direction, move, and unit. These control the movements of the turtle graphic via run function explained below.
-    """
+
     def takeStep(self, step):
+        """
+            chris.26@tamu.edu
+
+            Defines a function called 'takeStep' that takes 'step' as a parameter which is used to hold three parameters:
+            direction, move, and unit. These control the movements of the turtle graphic via run function explained below.
+            """
         (dir, move, unit) = step
 
         self.turn(dir)
         self.move(move, unit)
 
-    """
-    chris.26@tamu.edu
-    
-    Defines a function called 'run' in the 'Drive' class that takes parameter 'steps'. Uses a 'for-loop' to loop through
-    'steps' to run into the turtle graphic. Uses command 'exitonclick' so that the turtle graphic does not disappear 
-    after completely executing, and will disappear once the user clicks the screen. Also uses parameters stated earlier 
-    in the class to set the screensize of the turtle window.
-    Sets background of turtle graphic window to file stated.
-    """
+
     def run(self, steps):
+        """
+            chris.26@tamu.edu
+
+            Defines a function called 'run' in the 'Drive' class that takes parameter 'steps'. Uses a 'for-loop' to loop through
+            'steps' to run into the turtle graphic. Uses command 'exitonclick' so that the turtle graphic does not disappear
+            after completely executing, and will disappear once the user clicks the screen. Also uses parameters stated earlier
+            in the class to set the screensize of the turtle window.
+            Sets background of turtle graphic window to file stated.
+            """
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
         title(self.title)
