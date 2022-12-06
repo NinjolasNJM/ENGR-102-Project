@@ -15,7 +15,7 @@ class GUI:
         self.textbox=tk.Text(self.window, height=1)
         self.textbox.pack()
 
-        self.button=tk.Button(self.window, text='Go', command=self.assign_message)
+        self.button=tk.Button(self.window, text='Input', command=self.assign_message)
         self.button.pack(padx=10,pady=10)
 
         self.speed_label=tk.Label(self.window, text='Speed of car: ')
@@ -41,7 +41,7 @@ class GUI:
 
     def assign_message(self):
         self.file=self.textbox.get('1.0',tk.END)
-
+        print('File name received')
     def assign_speed_slow(self):
         self.speed=1
         self.window.destroy()
@@ -54,8 +54,3 @@ class GUI:
         self.speed=3
         self.window.destroy()
 
-gui=GUI()
-file_name=gui.file
-print(file_name)
-s=gui.speed
-print(s)

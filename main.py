@@ -11,7 +11,7 @@
 
 from file_reader import Instructions
 from turtle_graphic import Drive
-
+from gui import GUI
 
 # run code:
 # get steps as a list of each word in each step that is separated by a blank line.
@@ -19,19 +19,23 @@ file1 = 'Kyle2VetPk.txt'
 file2 = 'Easterwood2Coulter.txt'
 file3 = 'Zach2StJo.txt'
 
+gui=GUI()
+file_name=gui.file
+file_name=file_name.split('\n')[0]
+print(file_name)
+s=gui.speed
+print(s)
 
-
-def codeToRun(fileName):
+def codeToRun(fileName,s):
     steps = Instructions(fileName)
 
     print(steps.makeInstructions())
-    drive = Drive(1)
+    drive = Drive(500,600,s)
     drive.run(steps.makeInstructions())
 
 
-codeToRun(file1)
-codeToRun(file2)
-codeToRun(file3)
+codeToRun(file_name,s)
+
 
 
 
