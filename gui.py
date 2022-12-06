@@ -97,7 +97,7 @@ class GUI:
 
     def go(self):
         """elivalentino@tamu.edu
-        This function commands the go button to close the gui
+        This function commands the go button to close the gui but only if the file can be found
         """
         self.check=0
         try:
