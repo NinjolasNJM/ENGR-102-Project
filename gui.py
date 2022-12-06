@@ -9,7 +9,7 @@ class GUI:
         self.file='gg'
         self.speed=1
 
-        self.label= tk.Label(self.window, text='Input file name and press Go')
+        self.label= tk.Label(self.window, text='Input file name and press Input')
         self.label.pack(padx=10,pady=10)
 
         self.textbox=tk.Text(self.window, height=1)
