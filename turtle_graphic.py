@@ -13,7 +13,8 @@ from turtle import *
 
 class Drive:
     '''vegbtefb'''
-    def __init__(self, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
+    def __init__(self, title, windowHeight=500, windowWidth=600, speed=2, shape=("circle"), bColor="white", bgFile=('colors.png')):
+        self.title = title
         self.speed = speed
         self.shape = shape
         self.windowHeight = windowHeight
@@ -71,7 +72,7 @@ class Drive:
     to calculate the distance required to move.
     """
     def move(self, move, unit):
-        dist = float(move) * 20 / 5280 if unit == 'ft' else float(move) * 20
+        dist = float(move) * 50 / 5280 if unit == 'ft' else float(move) * 50
         forward(dist)
 
     """
@@ -98,11 +99,12 @@ class Drive:
     def run(self, steps):
         screensize(self.windowHeight, self.windowWidth, self.bColor)
 
+        title(self.title)
         bgpic('colors.png')  # image should be PNG or GIF
         update()  # to show the image
         speed(self.speed)
+        color('#555555', '#a71810')
         for s in steps:
             self.takeStep(s)
 
         exitonclick()
-

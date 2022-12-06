@@ -11,6 +11,8 @@
 class Instructions:
     '''NinjolasNJM2003@tamu.edu
 
+    Class that handles the file input and converts it into steps that can be used
+    by the Drive class to draw the car's route.
     '''
     def __init__(self, name):
         '''NinjolasNJM2003@tamu.edu
@@ -25,13 +27,13 @@ class Instructions:
         ''' NinjolasNJM2003@gmail.com
 
         Takes a list of strings and gets the parts of the step from it.
-        Looks for keysords like "turn" and "ft" for determining where the direction and
+        Looks for keywords like "turn" and "ft" for determining where the direction and
         move distance, respectively, are defined, and returns the direction,
         distance and the distance's unit.'''
-        dir = 'Continue'
+        dir = 'onto'
         move = 0
-        unit = None
-        dirKinds = ['turn', 'head', 'continue', 'slight']
+        unit = 'Nothings'
+        dirKinds = ['turn', 'head', 'continue', 'slight', 'keep']
         moveKinds = ['mi', 'ft']
         for i in range(len(step)):
             if str.lower(step[i]) in dirKinds:
@@ -47,6 +49,20 @@ class Instructions:
 
         Makes a list with each instruction in it'''
         instr = [self.makeStep(f) for f in self.file]
+        for i in instr:
+            if i[1] == 0:
+                instr.remove(i)
         return instr
 
+    def stepToString(self, step):
+        ''' NinjolasNJM2003@gmail.com
 
+        Returns a String describing the step that is taken.'''
+        (dir, move, unit) = step
+        return('Go ' + dir + ' ' + str(move) + ' ' + unit)
+
+    def __str__(self):
+        ''' NinjolasNJM2003@gmail.com
+
+        Returns a String of all the steps.'''
+        return '\n'.join([self.stepToString(s) for s in self.makeInstructions()])
